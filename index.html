@@ -1,226 +1,221 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jefes de Cuadrilla - OANS</title>
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <style>
-    :root{
-        --bg:#f4f5f7; --panel-bg:#ffffff; --texto:#222; --borde:#D0D5DD; --azul:#6B7280; --azul-claro:#E5E7EB;
-        --header-bg:#0d0e10; --header-text:#f1f2f4; --verde:#2E7D32; --rojo:#B00020;
-    }
-    *{box-sizing:border-box;}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--texto);}
-    .header{background:var(--header-bg);color:var(--header-text);padding:18px 22px;}
-    .header .logo{font-size:22px;font-weight:bold;letter-spacing:2px;}
-    .header .sub{font-size:12px;opacity:.85;margin-top:2px;}
-    .app{max-width:760px;margin:0 auto;padding:20px;}
-    .card{background:var(--panel-bg);border:1px solid var(--borde);border-radius:10px;padding:20px;margin-bottom:16px;}
-    h2{margin-top:0;font-size:17px;color:var(--azul);}
-    .sub{font-size:12px;color:#666;margin-bottom:14px;}
-    button.action{background:var(--azul);color:#fff;border:none;padding:10px 18px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:bold;}
-    button.action.green{background:var(--verde);}
-    button.action:disabled{opacity:.5;cursor:not-allowed;}
-    label{font-size:12px;font-weight:bold;display:block;margin-bottom:4px;}
-    select,input{font-family:Arial;font-size:13px;border:1px solid #b8c2cc;border-radius:4px;padding:6px 8px;width:100%;}
-    .toolbar{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:14px;}
-    .toolbar > div{flex:1;min-width:130px;}
-    table{border-collapse:collapse;width:100%;font-size:12px;}
-    th,td{border:1px solid var(--borde);padding:6px 8px;text-align:center;}
-    th{background:var(--azul);color:#fff;font-size:11px;}
-    td input,td select{width:auto;min-width:70px;}
-    .tecnicos{max-height:220px;overflow-y:auto;border:1px solid var(--borde);border-radius:6px;padding:8px;}
-    .tecnicos label{display:block;font-weight:normal;font-size:13px;padding:4px 0;}
-    #estado{font-size:12px;margin-top:10px;color:#666;}
-    .aviso{background:#FCE4D6;border-left:4px solid var(--rojo);padding:10px 12px;border-radius:4px;font-size:12px;margin-bottom:14px;}
-    </style>
-  </head>
-  <body>
-      <div class="header">
-            <div class="logo">OANS</div>div>
-            <div class="sub">Jefes de Cuadrilla — Check-in diario</div>div>
-      </div>div>
-      <div class="app">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jefes de Cuadrilla - OANS</title>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<style>
+:root{
+  --bg:#f4f5f7; --panel-bg:#ffffff; --texto:#222; --borde:#D0D5DD; --azul:#6B7280; --azul-claro:#E5E7EB;
+  --header-bg:#0d0e10; --header-text:#f1f2f4; --verde:#2E7D32; --rojo:#B00020;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--texto);}
+.header{background:var(--header-bg);color:var(--header-text);padding:18px 22px;}
+.header .logo{font-size:22px;font-weight:bold;letter-spacing:2px;}
+.header .sub{font-size:12px;opacity:.85;margin-top:2px;}
+.app{max-width:760px;margin:0 auto;padding:20px;}
+.card{background:var(--panel-bg);border:1px solid var(--borde);border-radius:10px;padding:20px;margin-bottom:16px;}
+h2{margin-top:0;font-size:17px;color:var(--azul);}
+.sub{font-size:12px;color:#666;margin-bottom:14px;}
+button.action{background:var(--azul);color:#fff;border:none;padding:10px 18px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:bold;}
+button.action.green{background:var(--verde);}
+button.action:disabled{opacity:.5;cursor:not-allowed;}
+label{font-size:12px;font-weight:bold;display:block;margin-bottom:4px;}
+select,input{font-family:Arial;font-size:13px;border:1px solid #b8c2cc;border-radius:4px;padding:6px 8px;width:100%;}
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:14px;}
+.toolbar > div{flex:1;min-width:130px;}
+table{border-collapse:collapse;width:100%;font-size:12px;}
+th,td{border:1px solid var(--borde);padding:6px 8px;text-align:center;}
+th{background:var(--azul);color:#fff;font-size:11px;}
+td input,td select{width:auto;min-width:70px;}
+.tecnicos{max-height:220px;overflow-y:auto;border:1px solid var(--borde);border-radius:6px;padding:8px;}
+.tecnicos label{display:block;font-weight:normal;font-size:13px;padding:4px 0;}
+#estado{font-size:12px;margin-top:10px;color:#666;}
+.aviso{background:#FCE4D6;border-left:4px solid var(--rojo);padding:10px 12px;border-radius:4px;font-size:12px;margin-bottom:14px;}
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">OANS</div>
+    <div class="sub">Jefes de Cuadrilla — Check-in diario</div>
+  </div>
+  <div class="app">
 
-            <div id="config-aviso" class="aviso" style="display:none;">
-                    ⚠️ Esta página todavía no está configurada. Falta pegar el Client ID de Google en el archivo (busca <code>GOOGLE_CLIENT_ID</code>). Pide esto al administrador del sistema.
-            </div>div>
-      
-          <div class="card" id="login-card">
-                <h2>Iniciar sesión</h2>
-                <div class="sub">Inicia sesión con tu cuenta de Google para poder cargar la información de tu cuadrilla. Tu cuenta debe tener acceso a la carpeta de Drive compartida por el administrador.</div>div>
-                <button class="action" id="btn-login" onclick="iniciarSesion()">Iniciar sesión con Google</button>button>
-                <div id="estado"></div>div>
-          </div>div>
-      
-          <div class="card" id="jefe-card" style="display:none;">
-                <h2>¿Quién eres?</h2>
-                <div class="sub">Selecciona tu nombre de la lista.</div>div>
-                <select id="jefe-select" onchange="onCambiaJefe()"><option value="">-- Selecciona --</option>option></select>select>
-          </div>div>
-      
-          <div class="card" id="cuadrilla-card" style="display:none;">
-                <h2>¿Quiénes son tu cuadrilla hoy?</h2>
-                <div class="sub">Marca a los técnicos que trabajan contigo.</div>div>
-                <div class="tecnicos" id="tecnicos-list"></div>div>
-          </div>div>
-      
-          <div class="card" id="form-card" style="display:none;">
-                <h2>Datos del día</h2>
-                <div class="toolbar">
-                        <div><label>Fecha</label><input type="date" id="f-fecha"></div>
-                        <div><label>Faena/Lugar</label><input id="f-faena" placeholder="Faena"></div>
-                        <div><label>Tipo de Día</label><select id="f-tipo"><option>Normal</option><option>Feriado</option></select>select></div>
-                        <div><label>Entrada</label><input type="time" id="f-entrada"></div>
-                        <div><label>Salida</label><input type="time" id="f-salida"></div>
-                        <div><label>Pernocta</label><select id="f-pernocta"><option>No</option><option>Sí</option></select>select></div>
-                </div>
-                <button class="action green" onclick="enviarCheckin()">Guardar y enviar</button>button>
-                <div id="envio-estado" style="font-size:12px;margin-top:10px;color:#666;"></div>
-          </div>
-      
+    <div id="config-aviso" class="aviso" style="display:none;">
+      ⚠️ Esta página todavía no está configurada. Falta pegar el Client ID de Google en el archivo (busca <code>GOOGLE_CLIENT_ID</code>). Pide esto al administrador del sistema.
+    </div>
+
+    <div class="card" id="login-card">
+      <h2>Iniciar sesión</h2>
+      <div class="sub">Inicia sesión con tu cuenta de Google para poder cargar la información de tu cuadrilla. Tu cuenta debe tener acceso a la carpeta de Drive compartida por el administrador.</div>
+      <button class="action" id="btn-login" onclick="iniciarSesion()">Iniciar sesión con Google</button>
+      <div id="estado"></div>
+    </div>
+
+    <div class="card" id="jefe-card" style="display:none;">
+      <h2>¿Quién eres?</h2>
+      <div class="sub">Selecciona tu nombre de la lista.</div>
+      <select id="jefe-select" onchange="onCambiaJefe()"><option value="">-- Selecciona --</option></select>
+    </div>
+
+    <div class="card" id="cuadrilla-card" style="display:none;">
+      <h2>¿Quiénes son tu cuadrilla hoy?</h2>
+      <div class="sub">Marca a los técnicos que trabajan contigo.</div>
+      <div class="tecnicos" id="tecnicos-list"></div>
+    </div>
+
+    <div class="card" id="form-card" style="display:none;">
+      <h2>Datos del día</h2>
+      <div class="toolbar">
+        <div><label>Fecha</label><input type="date" id="f-fecha"></div>
+        <div><label>Faena/Lugar</label><input id="f-faena" placeholder="Faena"></div>
+        <div><label>Tipo de Día</label><select id="f-tipo"><option>Normal</option><option>Feriado</option></select></div>
+        <div><label>Entrada</label><input type="time" id="f-entrada"></div>
+        <div><label>Salida</label><input type="time" id="f-salida"></div>
+        <div><label>Pernocta</label><select id="f-pernocta"><option>No</option><option>Sí</option></select></div>
       </div>
-  
-  <script>
-    /* ============ CONFIGURACIÓN — el administrador debe completar esto ============ */
-    const GOOGLE_CLIENT_ID = "981408447527-ndk6fmcr2fparqsqgqjct1oupa7svu8r.apps.googleusercontent.com";
-    const DRIVE_FOLDER_ID = "1Vsc3nXVwwclxDIcF_OMPnuHdwRO9DFmn";
-    const DRIVE_SCOPE = "https://www.googleapis.com/auth/drive";
+      <button class="action green" onclick="enviarCheckin()">Guardar y enviar</button>
+      <div id="envio-estado" style="font-size:12px;margin-top:10px;color:#666;"></div>
+    </div>
 
-    /* Copia de los trabajadores (jefes de cuadrilla y técnicos). Si cambian en el sistema principal,
-       pide al administrador que actualice esta lista aquí también. */
-    const PERSONAL = [
-      {"id":"p1","nombre":"José Erwin Igor Gómez","cargo":"Jefe de Cuadrilla","estado":"Activo"},
-      {"id":"p2","nombre":"Iván Alejandro Caicheo Guerrero","cargo":"Técnico de Servicio","estado":"Inactivo"},
-      {"id":"p3","nombre":"Felipe Ignacio Fuentes Quezada","cargo":"Jefe de Cuadrilla","estado":"Activo"},
-      {"id":"p4","nombre":"Claudio Andrés Recabal Contreras","cargo":"Técnico de Servicio","estado":"Activo"},
-      {"id":"p5","nombre":"Hugo Andrés Enipani Pérez","cargo":"Soldador","estado":"Activo"},
-      {"id":"p6","nombre":"Carlos Ricardo Ramírez Vargas","cargo":"Técnico de Servicio","estado":"Activo"},
-      {"id":"p7","nombre":"José Alejandro Aburto Aburto","cargo":"Técnico de Servicio","estado":"Activo"},
-      {"id":"p8","nombre":"Jonathan Aurelio Contreras Huenante","cargo":"Técnico de Servicio","estado":"Activo"},
-      {"id":"p9","nombre":"Pedro Pablo Emilio Hermida Ortiz","cargo":"Técnico de Servicio","estado":"Activo"},
-      {"id":"p10","nombre":"María Belén Bustamante Bustamante","cargo":"Encargada de Prevención de Riesgos","estado":"Activo"},
-      {"id":"p11","nombre":"Sebastián Ignacio López Cabello","cargo":"Técnico de Servicio","estado":"Activo"}
-      ];
-    /* ================================================================================ */
+  </div>
 
-    let accessToken = null;
-    let tokenClient = null;
-    let jefeActivo = null;
+<script>
+/* ============ CONFIGURACIÓN — el administrador debe completar esto ============ */
+const GOOGLE_CLIENT_ID = "981408447527-ndk6fmcr2fparqsqgqjct1oupa7svu8r.apps.googleusercontent.com";
+const DRIVE_FOLDER_ID = "1Vsc3nXVwwclxDIcF_OMPnuHdwRO9DFmn";
+const DRIVE_SCOPE = "https://www.googleapis.com/auth/drive";
 
-    function esc(s){ return (s===undefined||s===null? "": String(s)).replace(/"/g,"&quot;").replace(/</g,"&lt;"); }
+/* Copia de los trabajadores (jefes de cuadrilla y técnicos). Si cambian en el sistema principal,
+   pide al administrador que actualice esta lista aquí también. */
+const PERSONAL = [
+  {"id":"p1","nombre":"José Erwin Igor Gómez","cargo":"Jefe de Cuadrilla","estado":"Activo"},
+  {"id":"p2","nombre":"Iván Alejandro Caicheo Guerrero","cargo":"Técnico de Servicio","estado":"Inactivo"},
+  {"id":"p3","nombre":"Felipe Ignacio Fuentes Quezada","cargo":"Jefe de Cuadrilla","estado":"Activo"},
+  {"id":"p4","nombre":"Claudio Andrés Recabal Contreras","cargo":"Técnico de Servicio","estado":"Activo"},
+  {"id":"p5","nombre":"Hugo Andrés Enipani Pérez","cargo":"Soldador","estado":"Activo"},
+  {"id":"p6","nombre":"Carlos Ricardo Ramírez Vargas","cargo":"Técnico de Servicio","estado":"Activo"},
+  {"id":"p7","nombre":"José Alejandro Aburto Aburto","cargo":"Técnico de Servicio","estado":"Activo"},
+  {"id":"p8","nombre":"Jonathan Aurelio Contreras Huenante","cargo":"Técnico de Servicio","estado":"Activo"},
+  {"id":"p9","nombre":"Pedro Pablo Emilio Hermida Ortiz","cargo":"Técnico de Servicio","estado":"Activo"},
+  {"id":"p10","nombre":"María Belén Bustamante Bustamante","cargo":"Encargada de Prevención de Riesgos","estado":"Activo"},
+  {"id":"p11","nombre":"Sebastián Ignacio López Cabello","cargo":"Técnico de Servicio","estado":"Activo"}
+];
+/* ================================================================================ */
 
-    function initGoogleAuth(){
-        if (GOOGLE_CLIENT_ID.indexOf("PEGA_AQUI") === 0){
-              document.getElementById("config-aviso").style.display = "block";
-              document.getElementById("btn-login").disabled = true;
-              return;
-        }
-        tokenClient = google.accounts.oauth2.initTokenClient({
-              client_id: GOOGLE_CLIENT_ID,
-              scope: DRIVE_SCOPE,
-              callback: (resp)=>{
-                      if (resp.error){
-                                document.getElementById("estado").textContent = "No se pudo iniciar sesión: " + resp.error;
-                                return;
-                      }
-                      accessToken = resp.access_token;
-                      onLoginSuccess();
-              }
-        });
+let accessToken = null;
+let tokenClient = null;
+let jefeActivo = null;
+
+function esc(s){ return (s===undefined||s===null? "": String(s)).replace(/"/g,"&quot;").replace(/</g,"&lt;"); }
+
+function initGoogleAuth(){
+  if (GOOGLE_CLIENT_ID.indexOf("PEGA_AQUI") === 0){
+    document.getElementById("config-aviso").style.display = "block";
+    document.getElementById("btn-login").disabled = true;
+    return;
+  }
+  tokenClient = google.accounts.oauth2.initTokenClient({
+    client_id: GOOGLE_CLIENT_ID,
+    scope: DRIVE_SCOPE,
+    callback: (resp)=>{
+      if (resp.error){
+        document.getElementById("estado").textContent = "No se pudo iniciar sesión: " + resp.error;
+        return;
+      }
+      accessToken = resp.access_token;
+      onLoginSuccess();
     }
-    window.addEventListener("load", ()=>{
-        // Google Identity Services carga async; reintenta hasta que exista window.google
-        const esperar = setInterval(()=>{
-              if (window.google && google.accounts && google.accounts.oauth2){
-                      clearInterval(esperar);
-                      initGoogleAuth();
-              }
-        }, 200);
-    });
-
-    function iniciarSesion(){
-        if (!tokenClient) return;
-        tokenClient.requestAccessToken({prompt:"consent"});
+  });
+}
+window.addEventListener("load", ()=>{
+  // Google Identity Services carga async; reintenta hasta que exista window.google
+  const esperar = setInterval(()=>{
+    if (window.google && google.accounts && google.accounts.oauth2){
+      clearInterval(esperar);
+      initGoogleAuth();
     }
+  }, 200);
+});
 
-    function onLoginSuccess(){
-        document.getElementById("estado").textContent = "✅ Sesión iniciada.";
-        document.getElementById("jefe-card").style.display = "block";
-        const sel = document.getElementById("jefe-select");
-        const jefes = PERSONAL.filter(p=> p.cargo==="Jefe de Cuadrilla" && p.estado==="Activo");
-        sel.innerHTML = '<option value="">-- Selecciona --</option>' + jefes.map(j=>'<option value="'+j.id+'">'+esc(j.nombre)+'</option>').join("");
-    }
+function iniciarSesion(){
+  if (!tokenClient) return;
+  tokenClient.requestAccessToken({prompt:"consent"});
+}
 
-    function onCambiaJefe(){
-        jefeActivo = document.getElementById("jefe-select").value || null;
-        const cuadrillaCard = document.getElementById("cuadrilla-card");
-        const formCard = document.getElementById("form-card");
-        if (!jefeActivo){ cuadrillaCard.style.display="none"; formCard.style.display="none"; return; }
-        cuadrillaCard.style.display = "block";
-        formCard.style.display = "block";
-        const tecnicos = PERSONAL.filter(p=> p.estado==="Activo" && p.cargo.toLowerCase().includes("técnico"));
-        document.getElementById("tecnicos-list").innerHTML = tecnicos.map(t=>
-              '<label><input type="checkbox" class="tec-check" value="'+t.id+'"> '+esc(t.nombre)+'</label>'
-                                                                            ).join("");
-        document.getElementById("f-fecha").value = new Date().toISOString().slice(0,10);
-    }
+function onLoginSuccess(){
+  document.getElementById("estado").textContent = "✅ Sesión iniciada.";
+  document.getElementById("jefe-card").style.display = "block";
+  const sel = document.getElementById("jefe-select");
+  const jefes = PERSONAL.filter(p=> p.cargo==="Jefe de Cuadrilla" && p.estado==="Activo");
+  sel.innerHTML = '<option value="">-- Selecciona --</option>' + jefes.map(j=>'<option value="'+j.id+'">'+esc(j.nombre)+'</option>').join("");
+}
 
-    /* ============ Google Drive API v3 (REST directo, sin Cowork) ============ */
-    async function driveCrearArchivo(nombreArchivo, obj){
-        const boundary = "-------oans314159265";
-        const delimiter = "\r\n--" + boundary + "\r\n";
-        const closeDelim = "\r\n--" + boundary + "--";
-        const metadata = { name: nombreArchivo, mimeType: "application/json", parents: [DRIVE_FOLDER_ID] };
-        const body = delimiter + "Content-Type: application/json\r\n\r\n" + JSON.stringify(metadata)
-          + delimiter + "Content-Type: application/json\r\n\r\n" + JSON.stringify(obj)
-          + closeDelim;
-        const res = await fetch("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart", {
-              method: "POST",
-              headers: { "Authorization": "Bearer " + accessToken, "Content-Type": "multipart/related; boundary=\"" + boundary + "\"" },
-              body
-        });
-        if (!res.ok) throw new Error("Error creando archivo en Drive (" + res.status + ")");
-        return res.json();
-    }
+function onCambiaJefe(){
+  jefeActivo = document.getElementById("jefe-select").value || null;
+  const cuadrillaCard = document.getElementById("cuadrilla-card");
+  const formCard = document.getElementById("form-card");
+  if (!jefeActivo){ cuadrillaCard.style.display="none"; formCard.style.display="none"; return; }
+  cuadrillaCard.style.display = "block";
+  formCard.style.display = "block";
+  const tecnicos = PERSONAL.filter(p=> p.estado==="Activo" && p.cargo.toLowerCase().includes("técnico"));
+  document.getElementById("tecnicos-list").innerHTML = tecnicos.map(t=>
+    '<label><input type="checkbox" class="tec-check" value="'+t.id+'"> '+esc(t.nombre)+'</label>'
+  ).join("");
+  document.getElementById("f-fecha").value = new Date().toISOString().slice(0,10);
+}
 
-    /* ============ Envío del check-in ============ */
-    async function enviarCheckin(){
-        if (!accessToken){ alert("Inicia sesión primero."); return; }
-        if (!jefeActivo){ alert("Selecciona quién eres."); return; }
-        const fecha = document.getElementById("f-fecha").value;
-        const faena = document.getElementById("f-faena").value.trim();
-        const tipo = document.getElementById("f-tipo").value;
-        const entrada = document.getElementById("f-entrada").value;
-        const salida = document.getElementById("f-salida").value;
-        const pernocta = document.getElementById("f-pernocta").value;
-        const tecnicoIds = Array.from(document.querySelectorAll(".tec-check:checked")).map(el=>el.value);
-        const estadoEl = document.getElementById("envio-estado");
-        if (!fecha){ alert("Ingresa la fecha."); return; }
-        if (!tecnicoIds.length){ alert("Marca al menos un técnico."); return; }
-        const jefe = PERSONAL.find(p=>p.id===jefeActivo);
-        const chk = {
-              fecha, faena, tipo, entrada, salida, pernocta, tecnicoIds,
-              jefeId: jefeActivo, jefeNombre: jefe?jefe.nombre:"", timestamp: new Date().toISOString()
-        };
-        estadoEl.textContent = "Enviando…";
-        try {
-              await driveCrearArchivo("OANS_Checkin_"+fecha+"_"+jefeActivo+"_"+Date.now()+".json", chk);
-              estadoEl.textContent = "✅ Información enviada (" + tecnicoIds.length + " técnico(s)). Se verá reflejada en el sistema principal la próxima vez que se abra.";
-              document.querySelectorAll(".tec-check").forEach(el=>el.checked=false);
-              document.getElementById("f-faena").value = "";
-              document.getElementById("f-entrada").value = "";
-              document.getElementById("f-salida").value = "";
-        } catch(e){
-              estadoEl.textContent = "❌ No se pudo enviar: " + e.message;
-        }
-    }
-  </script>
-  </body>
+/* ============ Google Drive API v3 (REST directo, sin Cowork) ============ */
+async function driveCrearArchivo(nombreArchivo, obj){
+  const boundary = "-------oans314159265";
+  const delimiter = "\r\n--" + boundary + "\r\n";
+  const closeDelim = "\r\n--" + boundary + "--";
+  const metadata = { name: nombreArchivo, mimeType: "application/json", parents: [DRIVE_FOLDER_ID] };
+  const body = delimiter + "Content-Type: application/json\r\n\r\n" + JSON.stringify(metadata)
+    + delimiter + "Content-Type: application/json\r\n\r\n" + JSON.stringify(obj)
+    + closeDelim;
+  const res = await fetch("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart", {
+    method: "POST",
+    headers: { "Authorization": "Bearer " + accessToken, "Content-Type": "multipart/related; boundary=\"" + boundary + "\"" },
+    body
+  });
+  if (!res.ok) throw new Error("Error creando archivo en Drive (" + res.status + ")");
+  return res.json();
+}
+
+/* ============ Envío del check-in ============ */
+async function enviarCheckin(){
+  if (!accessToken){ alert("Inicia sesión primero."); return; }
+  if (!jefeActivo){ alert("Selecciona quién eres."); return; }
+  const fecha = document.getElementById("f-fecha").value;
+  const faena = document.getElementById("f-faena").value.trim();
+  const tipo = document.getElementById("f-tipo").value;
+  const entrada = document.getElementById("f-entrada").value;
+  const salida = document.getElementById("f-salida").value;
+  const pernocta = document.getElementById("f-pernocta").value;
+  const tecnicoIds = Array.from(document.querySelectorAll(".tec-check:checked")).map(el=>el.value);
+  const estadoEl = document.getElementById("envio-estado");
+  if (!fecha){ alert("Ingresa la fecha."); return; }
+  if (!tecnicoIds.length){ alert("Marca al menos un técnico."); return; }
+  const jefe = PERSONAL.find(p=>p.id===jefeActivo);
+  const chk = {
+    fecha, faena, tipo, entrada, salida, pernocta, tecnicoIds,
+    jefeId: jefeActivo, jefeNombre: jefe?jefe.nombre:"", timestamp: new Date().toISOString()
+  };
+  estadoEl.textContent = "Enviando…";
+  try {
+    await driveCrearArchivo("OANS_Checkin_"+fecha+"_"+jefeActivo+"_"+Date.now()+".json", chk);
+    estadoEl.textContent = "✅ Información enviada (" + tecnicoIds.length + " técnico(s)). Se verá reflejada en el sistema principal la próxima vez que se abra.";
+    document.querySelectorAll(".tec-check").forEach(el=>el.checked=false);
+    document.getElementById("f-faena").value = "";
+    document.getElementById("f-entrada").value = "";
+    document.getElementById("f-salida").value = "";
+  } catch(e){
+    estadoEl.textContent = "❌ No se pudo enviar: " + e.message;
+  }
+}
+</script>
+</body>
 </html>
-
-  </script></option></option></label></label></div></h2></h2></code>
-  </body>
-  </style></title>
-  </head>
